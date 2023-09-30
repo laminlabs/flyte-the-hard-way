@@ -21,7 +21,7 @@ eksctl utils associate-iam-oidc-provider --region <region> --cluster <Name-EKS-C
 1. Create the `flyte-system-role` IAM role without creating a service account; it will be created by running the Helm chart at the end of the process:
 
 ```bash
-eksctl create iamserviceaccount --cluster=fthw-eks-cluster --name=flyte-backend-flyte-binary --role-only --role-name=flyte-system-role --attach-policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess --approve --region <region-code> --namespace flyte
+eksctl create iamserviceaccount --cluster=<Name-EKS-Cluster> --name=flyte-backend-flyte-binary --role-only --role-name=flyte-system-role --attach-policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess --approve --region <region-code> --namespace flyte
 ```
 
 2. Verify that the trust relationship between the IAM role and the OIDC provider has been created correctly:
