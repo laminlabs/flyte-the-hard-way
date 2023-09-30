@@ -13,7 +13,7 @@ aws eks describe-cluster --region <region> --name <Name-EKS-Cluster> --query "cl
 ```
 2. Create the OIDC provider that will be associated with the EKS cluster:
 ```bash
-eksctl utils associate-iam-oidc-provider --cluster <Name-EKS-Cluster> --approve
+eksctl utils associate-iam-oidc-provider --region <region> --cluster <Name-EKS-Cluster> --approve
 ```
 3. From the AWS Management Console, verify that the OIDC provider has been created by going to **IAM** and then **Identity providers**. There should be a new provider entry has with the same <UUID-OIDC> issuer as the cluster’s.
 
